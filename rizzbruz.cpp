@@ -9,11 +9,11 @@ auto main() -> int {
 
     for (auto const& x : v) {
         if (x % 3 == 0 and x % 5 == 0) {
-            std::cout << "rizzfuzz" << std::endl;
+            std::cout << "rizzbruz" << std::endl;
         } else if (x % 3 == 0) {
             std::cout << "rizz" << std::endl;
         } else if (x % 5 == 0) {
-            std::cout << "fuzz" << std::endl;
+            std::cout << "bruz" << std::endl;
         } else {
             std::cout << x << std::endl;
         }
