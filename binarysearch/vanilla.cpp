@@ -25,7 +25,6 @@ std::vector<T> get_words() {
     std::string line;
     std::getline(std::cin, line);
     std::istringstream ss{line};
-    ss >> std::boolalpha;
     std::vector<T> v;
     std::copy(std::istream_iterator<T>{ss}, std::istream_iterator<T>{}, std::back_inserter(v));
     return v;
