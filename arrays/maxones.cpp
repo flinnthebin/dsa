@@ -26,8 +26,20 @@
 class Solution {
     public:
         auto findMaxConsecutiveOnes(std::vector<int>& nums) -> int {
-            return 0;
-    }
+            auto count = 0;
+            auto final = 0;
+            for (auto const n : nums) {
+                if (n == 1) {
+                    ++count;
+                } else {
+                    count = 0;
+                }
+                if (count > final) {
+                    final = count;
+                }
+            }
+            return final;
+        }
 };
 
 
