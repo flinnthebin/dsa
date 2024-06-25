@@ -17,12 +17,20 @@
 // Output: 1
 
 #include <vector>
+#include <string>
 #include <cassert>
 
 class Solution {
     public:
         auto findNumbers(std::vector<int>& nums) -> int {
-        return 0;
+            auto count = 0;
+            for (auto num : nums) {
+                auto alpha = std::to_string(num);
+                if (alpha.size() % 2 == 0) {
+                    ++count;
+                }
+            }
+            return count;
         }
 };
 
