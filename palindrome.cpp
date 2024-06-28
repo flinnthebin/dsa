@@ -25,4 +25,6 @@
 #include <string>
 #include <vector>
 
-auto main() -> int { std::vector<std::vector<std : string>>; }
+auto main() -> int {
+	std::vector<std::vector<std : string>>;
+}

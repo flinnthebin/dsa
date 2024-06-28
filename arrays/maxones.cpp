@@ -29,36 +29,37 @@
 #include <vector>
 
 class Solution {
-public:
-  auto findMaxConsecutiveOnes(std::vector<int> &nums) -> int {
-    auto count = 0;
-    auto final = 0;
-    for (auto const n : nums) {
-      if (n == 1) {
-        ++count;
-      } else {
-        count = 0;
-      }
-      if (count > final) {
-        final = count;
-      }
-    }
-    return final;
-  }
+ public:
+	auto findMaxConsecutiveOnes(std::vector<int>& nums) -> int {
+		auto count = 0;
+		auto final = 0;
+		for (auto const n : nums) {
+			if (n == 1) {
+				++count;
+			}
+			else {
+				count = 0;
+			}
+			if (count > final) {
+				final = count;
+			}
+		}
+		return final;
+	}
 };
 
 auto main() -> int {
-  Solution solution;
+	Solution solution;
 
-  auto exvec_1 = std::vector{1, 1, 0, 1, 1, 1};
-  auto exout_1 = int{3};
+	auto exvec_1 = std::vector{1, 1, 0, 1, 1, 1};
+	auto exout_1 = int{3};
 
-  auto exvec_2 = std::vector{1, 0, 1, 1, 0, 1};
-  auto exout_2 = int{2};
+	auto exvec_2 = std::vector{1, 0, 1, 1, 0, 1};
+	auto exout_2 = int{2};
 
-  auto res_1 = solution.findMaxConsecutiveOnes(exvec_1);
-  auto res_2 = solution.findMaxConsecutiveOnes(exvec_2);
+	auto res_1 = solution.findMaxConsecutiveOnes(exvec_1);
+	auto res_2 = solution.findMaxConsecutiveOnes(exvec_2);
 
-  assert(exout_1 == res_1);
-  assert(exout_2 == res_2);
+	assert(exout_1 == res_1);
+	assert(exout_2 == res_2);
 }
