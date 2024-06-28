@@ -1,10 +1,10 @@
-//    Given a string s, partition s such that every 
+//    Given a string s, partition s such that every
 //    substring
-//     of the partition is a 
+//     of the partition is a
 //    palindrome
 //    . Return all possible palindrome partitioning of s.
 //
-//     
+//
 //
 //    Example 1:
 //
@@ -14,7 +14,7 @@
 //
 //    Input: s = "a"
 //    Output: [["a"]]
-//     
+//
 //
 //    Constraints:
 //
@@ -25,9 +25,4 @@
 #include <string>
 #include <vector>
 
-auto main() -> int {
-
-    std::vector<std::vector<std:string>>;
-
-}
-
+auto main() -> int { std::vector<std::vector<std : string>>; }
