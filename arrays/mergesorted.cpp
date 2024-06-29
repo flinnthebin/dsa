@@ -29,3 +29,42 @@
 // 0 <= m, n <= 200
 // 1 <= m + n <= 200
 // -109 <= nums1[i], nums2[j] <= 109
+
+#include <cassert>
+#include <vector>
+
+class Solution {
+ public:
+	auto merge(std::vector<int>& nums1, int m, std::vector<int>& nums2, int n) -> void {}
+};
+
+auto main() -> int {
+	Solution solution;
+
+	auto exvec_m1 = std::vector<int>{1, 2, 3, 0, 0, 0};
+	auto const m1 = 3;
+	auto exvec_n1 = std::vector<int>{2, 5, 6};
+	auto const n1 = 3;
+	auto resvec_1 = std::vector<int>{1, 2, 2, 3, 5, 6};
+
+	solution.merge(exvec_m1, m1, exvec_n1, n1);
+	assert(exvec_m1 == resvec_1);
+
+	auto exvec_m2 = std::vector<int>{1};
+	auto const m2 = 1;
+	auto exvec_n2 = std::vector<int>{};
+	auto const n2 = 0;
+	auto resvec_2 = std::vector<int>{1};
+
+	solution.merge(exvec_m2, m2, exvec_n2, n2);
+	assert(exvec_m2 == resvec_2);
+
+	auto exvec_m3 = std::vector<int>{};
+	auto const m3 = 0;
+	auto exvec_n3 = std::vector<int>{1};
+	auto const n3 = 1;
+	auto resvec_3 = std::vector<int>{1};
+
+	solution.merge(exvec_m3, m3, exvec_n3, n3);
+	assert(exvec_m3 == resvec_3);
+}
