@@ -25,9 +25,17 @@
 
 class Solution {
  public:
-	auto duplicateZeroes(std::vector<int>& nums) -> std::vector<int> {
-		return {};
-	}
+    auto duplicateZeros(std::vector<int>& nums) -> std::vector<int> {
+        for (auto i = 0; i < nums.size(); ++i) {
+            if (nums[i] == 0 && (i + 1 < nums.size())) {
+                for (auto j = nums.size() - 1; j > i + 1; j--) {
+                    std::swap(nums[j], nums[j - 1]);
+                }
+                nums[++i] = 0;
+            }
+        }
+        return nums;
+    }
 };
 
 auto main() -> int {
@@ -39,6 +47,6 @@ auto main() -> int {
 	auto resvec_1 = std::vector{1, 0, 0, 2, 3, 0, 0, 4};
 	auto resvec_2 = std::vector{1, 2, 3};
 
-	assert(solution.duplicateZeroes(exvec_1) == resvec_1);
-	assert(solution.duplicateZeroes(exvec_2) == resvec_2);
+	assert(solution.duplicateZeros(exvec_1) == resvec_1);
+	assert(solution.duplicateZeros(exvec_2) == resvec_2);
 }
