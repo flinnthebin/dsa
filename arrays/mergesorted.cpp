@@ -32,16 +32,24 @@
 
 #include <cassert>
 #include <vector>
-#include <algorithm>
 
 class Solution {
  public:
 	auto merge(std::vector<int>& nums1, int m, std::vector<int>& nums2, int n) -> void {
-		std::sort(nums1.begin(), nums1.end());
-		for (auto i = 0; i < nums2.size(); ++i) {
-			nums1[i] = nums2[i];
+		auto n1_idx = m - 1;
+		auto n2_idx = n - 1;
+		auto merge_idx = m + n - 1;
+
+		while (n2_idx >= 0) {
+			if (n1_idx >= 0 and nums1[n1_idx] > nums2[n2_idx]) {
+				nums1[merge_idx] = nums1[n1_idx];
+				--n1_idx;
+			} else {
+				nums1[merge_idx] = nums2[n2_idx];
+				--n2_idx;
+			}
+			--merge_idx;
 		}
-		std::sort(nums1.begin(), nums1.end());
 	}
 };
 
