@@ -32,10 +32,17 @@
 
 #include <cassert>
 #include <vector>
+#include <algorithm>
 
 class Solution {
  public:
-	auto merge(std::vector<int>& nums1, int m, std::vector<int>& nums2, int n) -> void {}
+	auto merge(std::vector<int>& nums1, int m, std::vector<int>& nums2, int n) -> void {
+		std::sort(nums1.begin(), nums1.end());
+		for (auto i = 0; i < nums2.size(); ++i) {
+			nums1[i] = nums2[i];
+		}
+		std::sort(nums1.begin(), nums1.end());
+	}
 };
 
 auto main() -> int {
@@ -59,7 +66,7 @@ auto main() -> int {
 	solution.merge(exvec_m2, m2, exvec_n2, n2);
 	assert(exvec_m2 == resvec_2);
 
-	auto exvec_m3 = std::vector<int>{};
+	auto exvec_m3 = std::vector<int>{0};
 	auto const m3 = 0;
 	auto exvec_n3 = std::vector<int>{1};
 	auto const n3 = 1;
