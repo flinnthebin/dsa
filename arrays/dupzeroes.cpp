@@ -25,17 +25,17 @@
 
 class Solution {
  public:
-    auto duplicateZeros(std::vector<int>& nums) -> std::vector<int> {
-        for (auto i = 0; i < nums.size(); ++i) {
-            if (nums[i] == 0 && (i + 1 < nums.size())) {
-                for (auto j = nums.size() - 1; j > i + 1; j--) {
-                    std::swap(nums[j], nums[j - 1]);
-                }
-                nums[++i] = 0;
-            }
-        }
-        return nums;
-    }
+	auto duplicateZeros(std::vector<int>& nums) -> std::vector<int> {
+		for (auto i = 0; i < nums.size(); ++i) {
+			if (nums[i] == 0 && (i + 1 < nums.size())) {
+				for (auto j = nums.size() - 1; j > i + 1; j--) {
+					std::swap(nums[j], nums[j - 1]);
+				}
+				nums[++i] = 0;
+			}
+		}
+		return nums;
+	}
 };
 
 auto main() -> int {
