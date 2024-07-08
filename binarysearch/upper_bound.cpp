@@ -1,11 +1,8 @@
-/** std::lower_bound **
+/** std::upper_bound **
 
-    - Uses indexing
-    - No early return
-    - Always worst case of log(n) Time Complexity
-        - Single predicate call per pass
-        - Less branches
-    - Everything left of the result is strictly less
+    - The partner algorithm to std::lower_bound
+    - From the c++ std::binary_search implementation
+    - Everything right of the result is strictly more
     - More informative/actionable than a bool
 
 **Template Parameters**:
@@ -21,18 +18,15 @@
    - `v`: The value to compare.
    - `p`: The predicate function.
 
-
-
 **/
-
 #include <cstddef>
 
 template <class T, class I, class P>
 I
-lower_bound(I b, I e, const T& v, P p) {
+upper_bound(I b, I e, const T& v, P p) {
     for (auto size = std::size_t{e - b}; size > 0;) {
         auto cut = size / 2;
-        if (p(b[cut], v)) {
+        if (!p(v, b[cut])) {
             b += ++cut;
             size -= cut;
         } else {
